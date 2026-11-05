@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>greenspace — subscribe</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="/">
+      <span class="logo" aria-hidden="true"></span>
+      <span class="brand-name">greenspace</span>
+    </a>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/subscribe">Subscribe</a>
+      <a href="/main">Members</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="card">
+      <h2>get in</h2>
+      <p>three fields and you're through — first name, email, password.</p>
+
+      <form id="form" novalidate autocomplete="on">
+        <div class="field">
+          <label for="name">First name</label>
+          <input id="name" name="name" type="text" maxlength="64" required autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" maxlength="254" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="8" maxlength="256" required autocomplete="new-password">
+        </div>
+
+        <!-- honeypot: humans never fill this -->
+        <input id="hp" name="_hp" type="text" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+
+        <div class="challenge">
+          <span>human check: <b id="q">…</b> =</span>
+          <input id="answer" name="answer" type="text" inputmode="numeric" required style="width:80px">
+        </div>
+
+        <button type="submit">Continue</button>
+        <p id="msg" class="status" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <script src="/subscribe.js" defer></script>
+</body>
+</html>
